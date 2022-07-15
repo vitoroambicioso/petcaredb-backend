@@ -22,16 +22,20 @@ Route::get('/', function (){
 /**
  * rotas de criacao do usuario
  */
-
-Route::get('/usuario', [UserController::class, 'createPage']);
+Route::get('/registro', [UserController::class, 'createPage']);
 Route::post('/usuario', [UserController::class, 'create'])->name('user.create');
+
+/**
+ * rotas de atualizacao do usuario
+ */
+Route::get('/atualizaUsuario', [UserController::class, 'updatePage']);
+Route::put('/atualizaUsuario', [UserController::class, 'update'])->name('user.update');
 
 /**
  * rotas de login com API do Google
  */
-
-Route::get('/loginGoogle', [UserController::class, 'loginGoogle']);
-
+Route::get('/loginGoogle', [UserController::class, 'loginGooglePage']);
+Route::post('/loginGoogle', [UserController::class, 'loginGoogle'])->name('user.loginGoogle');
 
 /**
  * rotas de login do usuario
